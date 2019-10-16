@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Survey</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1> Survey</h1>
+        <form>
+            <div class="form-group">
+                <label for="nameInput">Name</label>
+                <input type="input" class="form-control" id="nameInput">
+            </div>
+            <div class="form-group">
+                <label for="imageInput">Picture Link</label>
+                <input type="input" class="form-control" id="imageInput">
+            </div>
+            <div class="form-group">
+                <label for="q1">Question 1</label>
+                <select class="form-control" id="q1">
+                    <option value="none">Please Select a Value</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q2">Question 2</label>
+                <select class="form-control" id="q2">
+                    <option value="none">Please Select a Value</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q3">Question 3</label>
+                <select class="form-control" id="q3">
+                    <option value="none">Please Select a Value</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q4">Question 4</label>
+                <select class="form-control" id="q4">
+                    <option value="none">Please Select a Value</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q5">Question 5</label>
+                <select class="form-control" id="q5">
+                    <option value="none">Please Select a Value</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q6">Question 6</label>
+                <select class="form-control" id="q6">
+                    <option value="none">Please Select a Value</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q7">Question 7</label>
+                <select class="form-control" id="q7">
+                    <option value="none">Please Select a Value</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q8">Question 8</label>
+                <select class="form-control" id="q8">
+                    <option value="none">Please Select a Value</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q9">Question 9</label>
+                <select class="form-control" id="q9">
+                    <option value="none">Please Select a Value</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q10">Question 10</label>
+                <select class="form-control" id="q10">
+                    <option value="none">Please Select a Value</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+        </form>
+        <button type="submit" class="btn btn-primary btn-lg" id="submit"> Submit</button>
+    </div>
+    <script type="text/javascript">
+
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+
+            var valid = true
+            if ($("#nameInput").val() === "" || $("imageInput").val() ===""){
+                valid = false
+            }
+            if ($("#q1").val() === "none" || $("#q2").val() === "none" || $("#q3").val() === "none" || $("#q4").val() === "none" || $("#q5").val() === "none"
+               || $("#q6").val() === "none" || $("#q7").val() === "none" || $("#q8").val() === "none" || $("#q9").val() === "none" || $("#q10").val() === "none"){
+                valid = false
+            }
+            if (valid){
+            var newUser = {
+                name: $("#nameInput").val(),
+                image: $("#imageInput").val(),
+                scores: [
+                    $("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(),
+                    $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()
+                ]
+            }
+
+            $.post("/api/friends", newUser, function (data) {
+
+            });
+        }
+        else{
+            alert("Invalid Survey, Please enter all fields")
+        }
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>

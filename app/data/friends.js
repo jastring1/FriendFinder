@@ -1,4 +1,4 @@
-
+//Array of Objects to hold information of users using the application
 var friendArray = [
     {
         name: "Tripp",
@@ -22,5 +22,5 @@ var friendArray = [
     },
 
 ]
-
+//exporting this array to be used in apiRoutes
 module.exports = friendArray
