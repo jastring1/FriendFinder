@@ -3,22 +3,22 @@ var path = require("path")
 var friendArray = [
     {
         name: "Tripp",
-        image: path.join(__dirname,"/images/tripp.jpg"),
+        image: path.join(__dirname,"../../images/tripp.jpg"),
         scores: [1,2,3,4,5,5,4,3,2,1]
     },
     {
         name: "Wes",
-        image: path.join(__dirname,"/images/ali.jpg"),
+        image: path.join(__dirname,"../../images/ali.jpg"),
         scores: [2,3,1,4,5,4,2,3,1,5]
     },
     {
         name: "Haley",
-        image: path.join(__dirname,"/images/haley.jpg"),
+        image: path.join(__dirname,"../../images/haley.jpg"),
         scores: [5,4,3,2,1,1,2,3,4,5]
     },
     {
         name: "Margaret",
-        image: path.join(__dirname,"/images/margaret.jpg"),
+        image: path.join(__dirname,"../../images/margaret.jpg"),
         scores: [3,3,3,2,4,5,5,3,2,1]
     },
 
