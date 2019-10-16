@@ -138,56 +138,56 @@
         <button type="submit" class="btn btn-primary btn-lg" id="submit"> Submit</button>
     </div>
     <div id="results" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-              <div class="modal-content">
+        <div class="modal-dialog">
+            <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h2 class="modal-title"><strong>Your Match!</strong></h2>
+                    <h2 class="modal-title"><strong>Your Match!</strong></h2>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                  <h2 id="results-name"></h2>
-                  <img id="results-img" src="" alt="">
+                    <h2 id="results-name"></h2>
+                    <img id="results-img" src="" alt="">
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
-              </div>
-        
             </div>
-          </div>
+
+        </div>
+    </div>
     <script type="text/javascript">
 
         $("#submit").on("click", function (event) {
             event.preventDefault();
 
             var valid = true
-            if ($("#nameInput").val() === "" || $("imageInput").val() ===""){
+            if ($("#nameInput").val() === "" || $("imageInput").val() === "") {
                 valid = false
             }
             if ($("#q1").val() === "none" || $("#q2").val() === "none" || $("#q3").val() === "none" || $("#q4").val() === "none" || $("#q5").val() === "none"
-               || $("#q6").val() === "none" || $("#q7").val() === "none" || $("#q8").val() === "none" || $("#q9").val() === "none" || $("#q10").val() === "none"){
+                || $("#q6").val() === "none" || $("#q7").val() === "none" || $("#q8").val() === "none" || $("#q9").val() === "none" || $("#q10").val() === "none") {
                 valid = false
             }
-            if (valid){
-            var newUser = {
-                name: $("#nameInput").val(),
-                image: $("#imageInput").val(),
-                scores: [
-                    $("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(),
-                    $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()
-                ]
+            if (valid) {
+                var newUser = {
+                    name: $("#nameInput").val(),
+                    image: $("#imageInput").val(),
+                    scores: [
+                        $("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(),
+                        $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()
+                    ]
+                }
+
+                $.post("/api/friends", newUser, function (data) {
+                    $("#results-name").text(data.name)
+                    $("#results-img").attr("src", data.image)
+                    $("#results").modal()
+
+                });
             }
-
-            $.post("/api/friends", newUser, function (data) {
-                $("#results-name").text(data.name)
-                $("#results-img").attr("src", data.image)
-                $("#results").modal()
-
-            });
-        }
-        else{
-            alert("Invalid Survey, Please enter all fields")
-        }
+            else {
+                alert("Invalid Survey, Please enter all fields")
+            }
         })
 
 
